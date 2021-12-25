@@ -4,7 +4,7 @@ RUN apt install ssh wget -y
 RUN mkdir /run/sshd
 RUN curl -s https://install.zerotier.com | bash
 RUN echo '/usr/sbin/sshd -D' >>/1.sh
-RUN echo 'zerotier-cli join $network' >>/1.sh
+RUN echo 'zerotier-cli join $network ' >>/1.sh
 RUN echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config 
 RUN echo root:uncleluo|chpasswd
 RUN chmod 755 /1.sh
