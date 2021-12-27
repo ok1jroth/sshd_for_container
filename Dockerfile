@@ -8,8 +8,7 @@ RUN apt update \
   && echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config \
   && echo root:qP7x98MVHW|chpasswd \
   && chmod 755 /usr/bin/frpc \
-  && chmod 755 /start.sh \
-  && chmod 755 /1.sh
-CMD  /start.sh
+  && chmod 755 /start.sh 
+CMD /start.sh
 
 ## deploy
