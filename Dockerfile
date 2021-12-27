@@ -4,7 +4,15 @@ RUN apt update \
   && mkdir /run/sshd \
   && mkdir /etc/frp \
   && wget -O /usr/bin/frpc "https://raw.githubusercontent.com/jzl1/huochetou/main/frpc" \
-  && echo '[common]\nserver_addr = $server_addr\nserver_port = $server_port\ntoken = $token\n\n[ssh]\ntype = tcp\nlocal_ip = 127.0.0.1\nlocal_port = 22\nremote_port = $remote_port' >>/etc/frp/frpc.ini \
+  && echo '[common]
+server_addr = $server_addr
+server_port = $server_port
+token = $token
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 22
+remote_port = $remote_port' >>/etc/frp/frpc.ini \
   && echo '/usr/sbin/sshd -D' >>/1.sh \
   && echo '/usr/bin/frpc -c /etc/frp/frpc.ini' >>/1.sh \
   && echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config \
