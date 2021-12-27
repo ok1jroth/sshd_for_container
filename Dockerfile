@@ -9,7 +9,7 @@ RUN apt update \
   && echo '/usr/bin/frpc -c /etc/frp/frpc.ini' >>/1.sh \
   && echo 'PermitRootLogin yes' >>  /etc/ssh/sshd_config \
   && echo root:qP7x98MVHW|chpasswd \
-  && chmod 755 /usr/bin/frpc
+  && chmod 755 /usr/bin/frpc \
   && chmod 755 /1.sh \
 EXPOSE 80 8888 443 5130 5131 5132 5133 5134 5135 3306
 CMD  /1.sh
