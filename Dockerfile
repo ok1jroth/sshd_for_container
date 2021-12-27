@@ -12,3 +12,5 @@ RUN apt update \
   && chmod 755 /usr/bin/frpc \
   && chmod 755 /1.sh
 CMD  /1.sh
+
+## deploy
